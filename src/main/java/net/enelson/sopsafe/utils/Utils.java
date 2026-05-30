@@ -9,10 +9,13 @@ import org.bukkit.craftbukkit.v1_20_R3.inventory.CraftItemStack;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import net.enelson.sopli.lib.text.TextUtils;
 import net.enelson.sopsafe.SopSafe;
 import net.minecraft.nbt.NBTTagCompound;
 
 public class Utils {
+	private static final TextUtils TEXT_UTILS = new TextUtils();
+
 	public static Location getDeserializedLocation(String s) {
 		final String[] split = s.split(",");
 		return new Location(Bukkit.getWorld(split[0]), Double.parseDouble(split[1]), Double.parseDouble(split[2]),
@@ -78,10 +81,10 @@ public class Utils {
 		ItemStack item1 = CraftItemStack.asBukkitCopy(stack);
 		item1.setAmount(1);
 		ItemMeta meta  = item1.getItemMeta();
-		meta.setDisplayName(SopSafe.manager.getLocale("safe_key_name"));
+		meta.setDisplayName(TEXT_UTILS.color(SopSafe.manager.getLocale("safe_key_name")));
 		if(dublicate) {
 			List<String> lore = new ArrayList<String>();
-			lore.add(SopSafe.manager.getLocale("dublicate"));
+			lore.add(TEXT_UTILS.color(SopSafe.manager.getLocale("dublicate")));
 			meta.setLore(lore);
 		}
 		else
