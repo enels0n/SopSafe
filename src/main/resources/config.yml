@@ -1,0 +1,56 @@
+safes:
+  copper:
+    item:
+      type: TRIPWIRE_HOOK
+      name: "###alocales_roleplay_item-custom-safe-key-copper###"
+      model: 2000
+      lore:
+        - ""
+        - "###alocales_roleplay_item-custom-pot-lore-durability###: 1"
+        - ""
+    durability: 1
+  golden:
+    item:
+      type: TRIPWIRE_HOOK
+      name: "###alocales_roleplay_item-custom-safe-key-golden###"
+      model: 2001
+      lore:
+        - ""
+        - "###alocales_roleplay_item-custom-pot-lore-durability###: 10"
+        - ""
+    durability: 10
+  iron:
+    item:
+      type: TRIPWIRE_HOOK
+      name: "###alocales_roleplay_item-custom-safe-key-iron###"
+      model: 2002
+      lore:
+        - ""
+        - "###alocales_roleplay_item-custom-pot-lore-durability###: 25"
+        - ""
+    durability: 25
+  diamond:
+    item:
+      type: TRIPWIRE_HOOK
+      name: "###alocales_roleplay_item-custom-safe-key-diamond###"
+      model: 2003
+      lore:
+        - ""
+        - "###alocales_roleplay_item-custom-pot-lore-durability###: 50"
+        - ""
+    durability: 50
+  netherite:
+    item:
+      type: TRIPWIRE_HOOK
+      name: "###alocales_roleplay_item-custom-safe-key-netherite###"
+      model: 2004
+      lore:
+        - ""
+        - "###alocales_roleplay_item-custom-pot-lore-durability###: 200"
+        - ""
+    durability: 200
+
+locale:
+  safe_key_name: "###alocales_roleplay_item-custom-safe-key###"
+  dublicate: "###alocales_roleplay_item-custom-safe-key-dublicate###"
+
