@@ -21,5 +21,5 @@
 ## Notes
 
 - depends on `SopLib` for shared text formatting via `TextUtils`
-- built against `1.20.4`-style NMS imports
+- safe key metadata is handled through `SopLib` item helpers instead of direct NMS
 - produces a single final `SopSafe.jar` without `original-*` release clutter

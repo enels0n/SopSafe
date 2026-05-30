@@ -20,6 +20,7 @@ import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitTask;
 
+import net.enelson.sopli.lib.SopLib;
 import net.enelson.sopsafe.SopSafe;
 import net.enelson.sopsafe.utils.Utils;
 
@@ -82,15 +83,14 @@ public class SafeManager {
 	}
 
 	public ItemStack generateKey(String safeName, int amount) {
-		ItemStack item = Utils.setType(
-				new ItemStack(Material.valueOf(this.config.getString("safes." + safeName + ".item.type"))), safeName);
-		item.setAmount(amount);
-		ItemMeta meta = item.getItemMeta();
-		meta.setDisplayName(this.config.getString("safes." + safeName + ".item.name"));
-		meta.setLore(this.config.getStringList("safes." + safeName + ".item.lore"));
-		meta.setCustomModelData(this.config.getInt("safes." + safeName + ".item.model"));
-		item.setItemMeta(meta);
-		return item;
+		return SopLib.getInstance().getItemUtils().createItem(
+				this.config.getString("safes." + safeName + ".item.type"),
+				amount,
+				this.config.getInt("safes." + safeName + ".item.model"),
+				this.config.getString("safes." + safeName + ".item.name"),
+				null,
+				this.config.getStringList("safes." + safeName + ".item.lore"),
+				java.util.Collections.singletonList("SopSafe::" + safeName));
 	}
 
 	public ItemStack generateDublicate(String safeName, String code) {
