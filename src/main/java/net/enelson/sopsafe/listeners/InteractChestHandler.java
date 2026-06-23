@@ -47,6 +47,7 @@ public class InteractChestHandler implements Listener {
 				return;
 			
 			safe = SopSafe.manager.createSafe(type, e.getClickedBlock());
+			org.bukkit.Bukkit.getPluginManager().callEvent(new net.enelson.sopsafe.event.SafeCreateEvent((Player)e.getPlayer()));
 
 			ItemStack item = Utils.setCode(e.getItem(), safe.getCode(), false);
 			e.getItem().setAmount(e.getItem().getAmount()-1);
